@@ -10,6 +10,16 @@
     <title>clients</title>
 </head>
 <body>
+    <div class="box">
+            
+            <table class="table">
+                <tr>
+                    <th>Type de vetement</th>
+                    <th>Prix unitaire</th>
+                    <th>Quantity</th>
+                    <th>Sous-total</th>
+                    <th>Annuler</th>
+                </tr>
     <?php for ($i = 0; $i < count($v); $i++) { ?>
                 
                     <tr class="table2">

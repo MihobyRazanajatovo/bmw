@@ -83,16 +83,7 @@
             <input type="email" name="email" id="email" placeholder="Email">
             <input type="number" name="telephone" id="telephone" placeholder="Phone">
         </div>
-        <div class="box">
-            
-            <table class="table">
-                <tr>
-                    <th>Type de vetement</th>
-                    <th>Prix unitaire</th>
-                    <th>Quantity</th>
-                    <th>Sous-total</th>
-                    <th>Annuler</th>
-                </tr>
+        
                 
 
 </body>
