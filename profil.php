@@ -9,15 +9,8 @@
         exit();
     }
     
-    $tab=array();
-    if(isset($_GET['add']))
-    {
-        AddCommande($_GET['idClient'],$_GET['idVetement'],$_GET['quantite'],$_GET['dateCommande'],$_GET['timeCommande'],$_GET['timeCommande']);
-    }
-    // $somme=sum('commande', 'totalCommande');
+    
 
-
-    $sous_total=sousTotal();
 ?>
 
 <!DOCTYPE html>
@@ -71,18 +64,15 @@
     <div class="container">
         <h2 class="titre">Bienvenue <?php echo $prenomAdmin; ?></h2>
         <p class="soustitre">Entrez ici les commande</p>
-        <form method="POST" action="traitement_ajout.php">
-        <div class="date">
-            <p>Date</p>
-            <input type="date" name="dateCommande" id="dateCommande">
-            <input type="time" name="timeCommande" id="timeCommande">
-        </div>
+        <form method="post" action="traitement_ajoutClient.php">
         <div class="client">
             <p>Coordonnees des clients</p>
             <input type="text" name="nom" id="nom" placeholder="Name">
             <input type="email" name="email" id="email" placeholder="Email">
             <input type="number" name="telephone" id="telephone" placeholder="Phone">
+            <input type="submit" value="Add" name="add">
         </div>
+</form>
         
                 
 

@@ -27,14 +27,27 @@
             exit();
         }
     }
-//miasa
-    function AddCommande($idClient,$idVetement,$quantite,$dateCommande,$timeCommande,$montant)
+    function AddClient($nom,$email,$telephone)
     {
         $connect=mysqlconnect();
-        $count=mysqli_query($connect,"select MAX(idCommande) from commande");
+        $count=mysqli_query($connect,"select MAX(idClient) from client");
         $result=mysqli_fetch_row($count);
         $id=$result[0]+1;
-        $sql="insert into commande values('".$id."','".$idClient."','".$idVetement."','".$quantite."','".$dateCommande."','".$timeCommande."','".$montant."'')";
+        $sql="insert into client values('".$id."','".$nom."','".$email."','".$telephone."')";
+        $valiny=mysqli_query($connect,$sql);
+    }
+//miasa
+    function AddCommande($idVetement,$quantite,$dateCommande,$timeCommande)
+    {
+        $connect=mysqlconnect();
+        $count=mysqli_query($connect,"select MAX(idClient) from client");
+        $count1=mysqli_query($connect,"select MAX(idCommande) from commande");
+        $result=mysqli_fetch_row($count);
+        $result1=mysqli_fetch_row($count1);
+        $idClient=$result[0]+1;
+        $idCommande=$result1[0]+1;
+        $sql="insert into commande  (idCommande,idClient, idVetement, quantite, dateCommande, timeCommande) values('".$idCommande."','".$idClient."','".$idVetement."','".$quantite."','".$dateCommande."','".$timeCommande."')";
+        echo $sql;
         $valiny=mysqli_query($connect,$sql);
     }
 
@@ -106,5 +119,25 @@
         $row = mysqli_fetch_assoc($valiny);
         $somme = $row['somme'];
         return $somme;
+    }
+    function getView()
+    {
+        $connect=mysqlconnect();
+        $sql = "SELECT * FROM DC where idCommande = '$idCommande'";
+        $result = mysqli_query($connect, $sql);
+
+        if (!$result) {
+            die("Erreur lors de l'exécution de la requête : " . mysqli_error($connect));
+        }
+
+        $valeurs = array();
+
+        while ($row = mysqli_fetch_array($result)) {
+            $valeurs[] = $row;
+        }
+
+        mysqli_free_result($result);
+
+        return $valeurs;
     }
 ?>

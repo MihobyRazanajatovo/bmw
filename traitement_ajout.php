@@ -2,7 +2,7 @@
 
 session_start();
 
-// include('function.php');
+include('function.php');
 
 // $ajouter=$_GET['idCommande'];
 
@@ -16,11 +16,12 @@ session_start();
 // $_SESSION['newtable']=$table;
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $quantities = $_POST['quantite'];
-
+  $idVetements = $_POST['idVetement'];
   // Loop through the submitted quantities
-  foreach ($quantities as $quantity) {
-    // Do something with each quantity value
-
+   for ($i = 0; $i < count($idVetements); $i++) {
+    echo $quantities[$i];
+    AddCommande($idVetements[$i],$quantities[$i],$_POST['dateCommande'],$_POST['timeCommande']); 
+    // Do something with the quantity value
   }
 }
 

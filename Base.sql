@@ -24,7 +24,19 @@ CREATE TABLE client (
     email VARCHAR(50) NOT NULL,
     telephone VARCHAR(15) NOT NULL
 );
-
+-- taloha
+CREATE TABLE commande (
+    idCommande int not null AUTO_INCREMENT,
+    idClient int,
+    idVetement int,
+    dateCommande DATE,
+    timeCommande TIME,
+    quantite int,
+    PRIMARY KEY ( idCommande),
+    FOREIGN KEY (idClient) REFERENCES client(idClient),
+    FOREIGN KEY(idVetement) REFERENCES vetement(idVetement)
+);
+-- vaovao
 CREATE TABLE commande (
     idCommande int not null AUTO_INCREMENT,
     idClient int,
@@ -34,14 +46,16 @@ CREATE TABLE commande (
     FOREIGN KEY (idClient) REFERENCES client(idClient)
 );
 
- Create table details_commande(
-    idDetails_commande int,
-    idVetement int,
+CREATE TABLE details_commande (
+    idDetailsCommande int not null AUTO_INCREMENT,
     idCommande int,
+    idVetement int,
     quantite int,
-    FOREIGN KEY(idVetement) REFERENCES vetement(idVetement),
-    FOREIGN KEY(idCommande) REFERENCES commande(idCommande)
- );
+    PRIMARY KEY ( idDetailsCommande),
+    FOREIGN KEY(idCommande) REFERENCES commande(idCommande),
+    FOREIGN KEY(idVetement) REFERENCES vetement(idVetement)
+);
+
 
 INSERT into administrateur (idAdmin, nomAdmin, prenomAdmin,email, numeroTel, mot_de_passe) values (1,'Rakotonoely','Rotsy','rotsy@gmail.com',0347829718,'shiky');
 
@@ -53,4 +67,7 @@ INSERT INTO vetement (idVetement, nomVetement, PrixUnitaire) values (7,'Serviett
 INSERT INTO vetement (idVetement, nomVetement, PrixUnitaire) values (5,'Drap',1000);
 INSERT INTO vetement (idVetement, nomVetement, PrixUnitaire) values (6,'Couette',6000);
 
-
+CREATE VIEW DC AS
+SELECT c.idCommande, c.idClient, c.dateCommande, c.timeCommande, d.idDetailsCommande, d.idVetement, d.quantite
+FROM commande c
+JOIN details_commande d ON c.idCommande = d.idCommande;
