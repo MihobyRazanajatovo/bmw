@@ -36,24 +36,21 @@ CREATE TABLE commande (
     FOREIGN KEY (idClient) REFERENCES client(idClient),
     FOREIGN KEY(idVetement) REFERENCES vetement(idVetement)
 );
--- vaovao
-CREATE TABLE commande (
-    idCommande int not null AUTO_INCREMENT,
+
+CREATE TABLE facture(
+    idFacture int not null AUTO_INCREMENT,
     idClient int,
-    dateCommande DATE,
-    timeCommande TIME,
-    PRIMARY KEY ( idCommande),
+    PRIMARY KEY (idFacture),
     FOREIGN KEY (idClient) REFERENCES client(idClient)
 );
 
-CREATE TABLE details_commande (
-    idDetailsCommande int not null AUTO_INCREMENT,
+CREATE TABLE details_facture (
+    idDetailsFacture int not null AUTO_INCREMENT,
     idCommande int,
-    idVetement int,
-    quantite int,
-    PRIMARY KEY ( idDetailsCommande),
-    FOREIGN KEY(idCommande) REFERENCES commande(idCommande),
-    FOREIGN KEY(idVetement) REFERENCES vetement(idVetement)
+    idFacture int,
+    PRIMARY KEY (idDetailsFacture),
+    FOREIGN KEY (idCommande) REFERENCES commande(idCommande),
+    FOREIGN KEY (idFacture) REFERENCES facture(idFacture)
 );
 
 
@@ -71,3 +68,6 @@ CREATE VIEW DC AS
 SELECT c.idCommande, c.idClient, c.dateCommande, c.timeCommande, d.idDetailsCommande, d.idVetement, d.quantite
 FROM commande c
 JOIN details_commande d ON c.idCommande = d.idCommande;
+
+CREATE VIEW vue_facture AS 
+SELECT * ,
