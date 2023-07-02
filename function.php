@@ -44,7 +44,7 @@
         $count1=mysqli_query($connect,"select MAX(idCommande) from commande");
         $result=mysqli_fetch_row($count);
         $result1=mysqli_fetch_row($count1);
-        $idClient=$result[0]+1;
+        $idClient=$result[0];
         $idCommande=$result1[0]+1;
         $sql="insert into commande  (idCommande,idClient, idVetement, quantite, dateCommande, timeCommande) values('".$idCommande."','".$idClient."','".$idVetement."','".$quantite."','".$dateCommande."','".$timeCommande."')";
         echo $sql;
