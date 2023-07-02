@@ -123,7 +123,7 @@
     function getView()
     {
         $connect=mysqlconnect();
-        $sql = "SELECT * FROM DC where idCommande = '$idCommande'";
+        $sql = "SELECT * FROM DC";
         $result = mysqli_query($connect, $sql);
 
         if (!$result) {
