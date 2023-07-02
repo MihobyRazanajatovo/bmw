@@ -108,36 +108,6 @@
         return $sous_total;
     }  
 
-    function sum($commande,$sous_total)
-    {
-        $connect=mysqlconnect();
-        $sql="SELECT SUM($totalCommande) AS somme FROM $commande";
-        $valiny=mysqli_query($connect,$sql);
-        if (!$valiny) {
-        die("Erreur lors de l'exécution de la requête : " . mysqli_error($connect));
-        }
-        $row = mysqli_fetch_assoc($valiny);
-        $somme = $row['somme'];
-        return $somme;
-    }
-    function getView()
-    {
-        $connect=mysqlconnect();
-        $sql = "SELECT * FROM DC";
-        $result = mysqli_query($connect, $sql);
-
-        if (!$result) {
-            die("Erreur lors de l'exécution de la requête : " . mysqli_error($connect));
-        }
-
-        $valeurs = array();
-
-        while ($row = mysqli_fetch_array($result)) {
-            $valeurs[] = $row;
-        }
-
-        mysqli_free_result($result);
-
-        return $valeurs;
-    }
+    
+    
 ?>
