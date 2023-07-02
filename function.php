@@ -97,6 +97,16 @@
 
     }
 
+    function getAllFacture()
+    {
+        $sql = "select * from facture";
+        $resultat = mysqli_query(mysqlconnect(),$sql);
+        while($out = mysqli_fetch_array($resultat))
+        {
+            $result[]=$out;
+        }
+        return $result;
+    }
 
 
 

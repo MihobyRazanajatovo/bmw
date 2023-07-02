@@ -29,5 +29,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Do something with the quantity value
   }
 }
+header("Location: facture.php");
 
 ?>

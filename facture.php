@@ -2,13 +2,17 @@
     include('function.php');
     $f = getDernierFacture(); 
     $vue = getView($f);
-    $total = getTotalFacture($f);
+    $total =  getTotalFacture($f);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="style2.css">
     <title>Facture</title>
 </head>
 <body>
@@ -16,9 +20,9 @@
     <div class="facture">
             <img src="assets/img/LOGO.png" alt="">
             <h3>FACTURE</h3>
-            <p><?php $vue[0]['client_nom'] ?></p>
-            <p><?php $vue[0]['dateCommande'] ?></p>
-            <p><?php $vue[0]['timeCommande'] ?></p>
+            <p><?php echo $vue[0]['client_nom'] ?></p>
+            <p><?php echo $vue[0]['dateCommande'] ?></p>
+            <p><?php echo $vue[0]['timeCommande'] ?></p>
             <table>
                 <tr>
                     <th>Designation</th>
@@ -35,7 +39,7 @@
                 </tr>
                 <?php } ?>
             </table>
-            <p>Total : <?php $total[0]['total'] ?> </p>
+            <p>Total : <?php echo $total[0]['total'] ?> </p>
             <p>THANK YOU</p>
         </div>
 </body>
