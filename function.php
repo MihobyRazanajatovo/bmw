@@ -51,15 +51,41 @@
         $valiny=mysqli_query($connect,$sql);
     }
 
-    function AddDetailsCommande($idDetails_commande,$idVetement,$idCommande,$quantite)
-    {
+    function AddDetailsFacture($idCommande,$idFacture){
         $connect=mysqlconnect();
-        $count=mysqli_query($connect,"select MAX(idDetails_commande) from details_commande");
-        $result=mysqli_fetch_row($count);
-        $id=$result[0]+1;
-        $sql="insert into details_commande values('".$id."','".$idClient."','".$idVetement."','".$quantite."','".$dateCommande."','".$timeCommande."','".$montant."'')";
+        $sql="insert into details_facture  (idCommande, idFacture) values('".$idCommande."','".$idFacture."')";
         $valiny=mysqli_query($connect,$sql);
     }
+
+    function AddFacture($idClient){
+        $connect=mysqlconnect();
+        $sql="insert into facture  (idClient) values('".$idClient."')";
+        $valiny=mysqli_query($connect,$sql);
+    }
+
+    function getDernierClient(){
+        $connect=mysqlconnect();
+        $count=mysqli_query($connect,"select MAX(idClient) from client");
+        $result=mysqli_fetch_row($count);
+        return $result[0];
+    }
+
+    function getDernierFacture(){
+        $connect=mysqlconnect();
+        $count=mysqli_query($connect,"select MAX(idFacture) from facture");
+        $result=mysqli_fetch_row($count);
+        return $result[0];
+    }
+
+    function getDernierCommande(){
+        $connect=mysqlconnect();
+        $count=mysqli_query($connect,"select MAX(idCommande) from commande");
+        $result=mysqli_fetch_row($count);
+        return $result[0];
+    }
+
+
+
 
 //en cours
     function updateCommande($idCommande,$idClient,$idVetement,$quantite,$dateCommande,$timeCommande,$montant)
