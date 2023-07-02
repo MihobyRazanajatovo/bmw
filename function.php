@@ -84,6 +84,19 @@
         return $result[0];
     }
 
+    function getTotalFacture($idFacture)
+    {
+        $connect=mysqlconnect();
+        $sql="select facture_vue.idFacture,SUM(facture_vue.sous_total) as total from facture_vue  where idFacture =".$idFacture;
+        $resultat = mysqli_query(mysqlconnect(),$sql);
+        while($out = mysqli_fetch_array($resultat))
+        {
+            $result[]=$out;
+        }
+        return $result;
+
+    }
+
 
 
 
@@ -134,6 +147,16 @@
         return $sous_total;
     }  
 
-    
+    function getView($idFacture)
+    {
+        $connect=mysqlconnect();
+        $sql="SELECT * FROM facture_vue where idFacture =".$idFacture;
+        $resultat = mysqli_query(mysqlconnect(),$sql);
+        while($out = mysqli_fetch_array($resultat))
+        {
+            $result[]=$out;
+        }
+        return $result;
+    }
     
 ?>

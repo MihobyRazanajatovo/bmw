@@ -50,25 +50,7 @@
             </div>
     </from>
 
-        <div class="facture">
-            <img src="assets/img/LOGO.png" alt="">
-            <h3>FACTURE</h3>
-            <table>
-                <tr>
-                    <th>Designation</th>
-                    <th>P.U</th>
-                    <th>Quantite</th>
-                    <th>TOTAL</th>
-                </tr>
-                <tr>
-                    <td>test</td>
-                    <td>test</td>
-                    <td>test</td>
-                    <td>test</td>
-                </tr>
-            </table>
-            <p>THANK YOU</p>
-        </div>
+        
     </div>
   <script>
   var inputs = document.querySelectorAll(".quantite");

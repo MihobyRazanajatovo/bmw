@@ -53,7 +53,6 @@ CREATE TABLE details_facture (
     FOREIGN KEY (idFacture) REFERENCES facture(idFacture)
 );
 
-
 INSERT into administrateur (idAdmin, nomAdmin, prenomAdmin,email, numeroTel, mot_de_passe) values (1,'Rakotonoely','Rotsy','rotsy@gmail.com',0347829718,'shiky');
 
 INSERT INTO vetement (idVetement, nomVetement, PrixUnitaire) values (1,'Torchon',300);
@@ -64,15 +63,13 @@ INSERT INTO vetement (idVetement, nomVetement, PrixUnitaire) values (7,'Serviett
 INSERT INTO vetement (idVetement, nomVetement, PrixUnitaire) values (5,'Drap',1000);
 INSERT INTO vetement (idVetement, nomVetement, PrixUnitaire) values (6,'Couette',6000);
 
--- CREATE VIEW DC AS
--- SELECT c.idCommande, c.idClient, c.dateCommande, c.timeCommande, d.idDetailsCommande, d.idVetement, d.quantite
--- FROM commande c
--- JOIN details_commande d ON c.idCommande = d.idCommande;
-
-
-SELECT c.idCommande, cl.nom AS client_nom, cl.email AS client_email, cl.telephone AS client_telephone, v.nomVetement, v.PrixUnitaire, c.dateCommande, c.timeCommande, c.quantite, f.idFacture
+CREATE VIEW facture_vue AS
+SELECT c.idCommande, cl.nom AS client_nom, cl.idClient AS idClient, cl.email AS client_email, cl.telephone AS client_telephone, v.nomVetement, v.PrixUnitaire, c.dateCommande, c.timeCommande, c.quantite, f.idFacture,(v.PrixUnitaire*c.quantite) AS sous_total
 FROM commande c
 JOIN details_facture df ON c.idCommande = df.idCommande
 JOIN facture f ON df.idFacture = f.idFacture
 JOIN client cl ON c.idClient = cl.idClient
 JOIN vetement v ON c.idVetement = v.idVetement;
+
+
+select facture_vue.idFacture,SUM(facture_vue.sous_total) as total from facture_vue  where idFacture = 1;
