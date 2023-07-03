@@ -9,8 +9,6 @@
         exit();
     }
     
-    
-
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +19,7 @@
     <title>Commandes</title>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="assets/css/test.css">
 
 </head>
 <body>
@@ -44,14 +42,13 @@
                                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Home</a>
                                 </li>
                                 <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-                                    <a class="nav-link" href="#">Customers</a>
+                                    <a class="nav-link" href="#">Liste des factures</a>
                                 </li>
-                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-                                    <a class="nav-link" href="#">Commands</a>
-                                </li>
-                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-                                    <a class="nav-link" href="#"><img src="assets/img/logout.png" alt="" style="height: 32px;margin-top: -8px;"></a>
-                                </li>
+                                <?php if(isset($prenomAdmin)) { ?>
+                                    <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                        <a href="Deconnexion.php"><img src="assets/img/logout.png" alt="" style="height: 32px;margin-top: -8px;"></a>
+                                    </li>
+                                <?php } ?>
                             </ul>
                         </div>    
                     </nav>
@@ -63,15 +60,15 @@
     </header>
     <div class="container">
         <h2 class="titre">Bienvenue <?php echo $prenomAdmin; ?></h2>
-        <p class="soustitre">Entrez ici les commande</p>
+        <p class="soustitre">Entrez ici les coordonnées du client</p>
         <form method="post" action="traitement_ajoutClient.php">
         <div class="client">
             <p>Coordonnees des clients</p>
             <input type="text" name="nom" id="nom" placeholder="Name">
             <input type="email" name="email" id="email" placeholder="Email">
             <input type="number" name="telephone" id="telephone" placeholder="Phone">
-            <input type="submit" value="Add" name="add">
-        </div>
+            <input type="submit" value="Ajouter" name="add" class="boutonAdd">
+    </div>
 </form>
         
                 

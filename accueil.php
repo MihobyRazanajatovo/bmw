@@ -1,6 +1,9 @@
 <?php
     include('function.php');
     $v=getVetement();
+    session_start();
+    $prenomAdmin = $_SESSION['prenomAdmin'];
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,45 +12,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="assets/css/test.css">
     <title>clients</title>
 </head>
 <body>
+    <div class="navigation-wrap bg-light start-header start-style">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="navbar navbar-expand-md navbar-light">
+                    
+                        <a class="navbar-brand" target="_blank"><img src="assets/img/LOGO.png" alt=""></a>	
+                        
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto py-4 py-md-0">
+                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 active">
+                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Accueil</a>
+                                </li>
+                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                    <a class="nav-link" href="#">Liste des factures</a>
+                                </li>
+                                <?php if(isset($prenomAdmin)) { ?>
+                                    <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                        <a href="Deconnexion.php"><img src="assets/img/logout.png" alt="" style="height: 32px;margin-top: -8px;"></a>
+                                    </li>
+                                <?php } ?>
+                            </ul>
+                        </div>    
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p class="soustitre2">Entrez ici les commandes</p>
     <form action="traitement_ajout.php" method="post">
         <div class="date">
-                <p>Date</p>
-                <input type="date" name="dateCommande" id="dateCommande">
-                <input type="time" name="timeCommande" id="timeCommande">
-            </div>
-        <div class="box">
-                
-                <table class="table">
-                    <tr>
-                        <th>Type de vetement</th>
-                        <th>Prix unitaire</th>
-                        <th>Quantity</th>
-                        <th>Sous-total</th>
-                        <th>Annuler</th>
-                    </tr>
-        <?php for ($i = 0; $i < count($v); $i++) { ?>
-                    
-                        <tr class="table2">
-                            <td><?php echo $v[$i]['nomVetement'] ?></td>
-                            <input type="hidden" name="idVetement[]" value="<?php echo $v[$i]['idVetement'] ?>">
-                            <td class="datavl"><?php echo $v[$i]['PrixUnitaire'] ?></td>
-                            <td><input class="quantite" type="number" name="quantite[]" id="quantite"></td>
-                            <td class="sous_total"></td>
-                            <td></td>
-
-                        </tr>
-                    
-                    <?php } ?>
-                </table>
-                <p>TOTAL:  <span id="total"></span></p>
-            
-                <p><input type="submit" value="ADD" name="add"></p>
-                
-            </div>
+          <p>Date</p>
+          <input type="date" name="dateCommande" id="dateCommande">
+          <input type="time" name="timeCommande" id="timeCommande">
+        </div>
+        <div class="box">      
+          <table class="table">
+              <tr>
+                  <th>Type de vetement</th>
+                  <th>Prix unitaire</th>
+                  <th>Quantity</th>
+                  <th>Sous-total</th>
+                  <th>Annuler</th>
+              </tr>
+              <?php for ($i = 0; $i < count($v); $i++) { ?>          
+              <tr class="table2">
+                  <td><?php echo $v[$i]['nomVetement'] ?></td>
+                  <input type="hidden" name="idVetement[]" value="<?php echo $v[$i]['idVetement'] ?>">
+                  <td class="datavl"><?php echo $v[$i]['PrixUnitaire'] ?></td>
+                  <td><input class="quantite" type="number" name="quantite[]" id="quantite"></td>
+                  <td class="sous_total"></td>
+                  <td></td>
+              </tr>
+              
+              <?php } ?>
+          <td>TOTAL:  <span id="total"></span></td>  
+          </table>
+          <p><input type="submit" value="Confirmer" name="add" class="confirmBouton"></p>      
+        </div>
     </from>
 
         

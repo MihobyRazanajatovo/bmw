@@ -9,7 +9,7 @@ body {
     background-color: #D9E7F0;
 }
 
-.titre{
+.titre {
     color: #32478F;
     font-family: 'Goovy Modice', sans-serif;
     font-size: 50px;
@@ -20,8 +20,7 @@ body {
 }
 
 .date,
-.client,
-.facture {
+.client {
     position: absolute;
     top: 107px;
     padding-left: 20px;
@@ -34,13 +33,14 @@ body {
 }
 
 .date {
-    right: 0;
     width: 300px;
-    height: 90px;
+    height: 95px;
     background-color: #ffffff;
-
-    
+    margin-top: 50px;
+    margin-top: 94px;
+    margin-left: 137px;
 }
+
 input[type="date"] {
     border: 1px;
     background-color: #D9E7F0;
@@ -52,6 +52,7 @@ input[type="date"] {
     padding: 5px;
     margin-top: -7px;
 }
+
 input[type="time"] {
     border: 1px;
     background-color: #D9E7F0;
@@ -68,10 +69,11 @@ input[type="time"] {
 .client {
     background-color: rgb(255, 255, 255);
     width: 300px;
-    height: 164px;
-    margin-top: 114px;
-    right: 0;
+    height: 213px;
+    margin-top: 21px;
+
 }
+
 .client input[type="text"],
 .client input[type="email"],
 .client input[type="number"] {
@@ -87,41 +89,61 @@ input[type="time"] {
     padding: 10px;
 }
 
-
-
 .box {
     background-color: rgb(255, 255, 255);
     width: 700px;
-    height: 508px;
+    height: 540px;
     margin-top: 163px;
     border-radius: 7px;
     box-shadow: 0 2px 5px rgba(71, 71, 71, 0.3);
-    
+    margin-left: 137px;
 }
 
 .facture {
     background-color: rgb(255, 255, 255);
-    right: 0;
-    height: 350px;
-    width: 300px;
-    margin-top: 302px;
+    width: 400px;
+    height: 520px;
+    margin-top: 12px;
+    padding-left: 40px;
+    padding-top: 30px;
+    font-family: 'Segoe UI', sans-serif;
+    border-radius: 7px;
+    margin-left: 137px;
+    font-size: 13px;
 }
 
 .soustitre {
     position: absolute;
-    top: 108px;
     left: 14px;
     font-family: 'Segoe UI', sans-serif;
     font-weight: 600;
-    font-size: 35px;
+    font-size: 21px;
+}
+
+.soustitre2 {
+
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 600;
+    font-size: 21px;
+    margin-top: 146px;
+    margin-left: 137px;
+}
+.soustitre3 {
+
+    font-family: 'Segoe UI', sans-serif;
+    font-weight: 600;
+    font-size: 21px;
+    margin-top: 146px;
+    margin-left: 137px;
 }
 
 .table {
     border: 1px;
-    margin-bottom: 20px;
+    margin-top: 162px;
+    
 }
 
-.table2 input[type="number"]{
+.table2 input[type="number"] {
     border: 1px solid #ffffff;
     background-color: #D9E7F0;
     height: 30px;
@@ -129,6 +151,7 @@ input[type="time"] {
     width: 48px;
     padding-left: 5px;
     color: #32478F;
+    
 }
 
 .facture img {
@@ -136,3 +159,37 @@ input[type="time"] {
     width: auto;
 }
 
+.boutonAdd {
+    background-color: #32478F;
+    color: white;
+    font-weight: 400;
+    font-size: 15px;
+    width: 79px;
+    height: 33px;
+    margin-top: 7px;
+    margin-left: 178px;
+    border-radius: 9px;
+    border: none; 
+    cursor: pointer;
+}
+
+.boutonAdd :hover {
+    background-color: #e85b5b;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    color: #32478F;
+}
+
+.confirmBouton {
+    background-color: #32478F;
+    color: white;
+    font-weight: 400;
+    font-size: 15px;
+    width: 90px;
+    height: 33px;
+    margin-left: 178px;
+    border-radius: 9px;
+    border: none;
+    cursor: pointer;
+    float: right;
+    margin-right: 35px;
+}
