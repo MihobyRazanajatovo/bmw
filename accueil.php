@@ -84,7 +84,7 @@
                         <td class="sous_total"></td>
                     </tr>               
                     <?php } ?>
-                    <td>TOTAL:  <span id="total"></span></td>  
+                    <th colspan="2">TOTAL:  <span id="total"></span></th>  
                 </table>
                 <p><input type="submit" value="Confirmer" name="add" class="confirmBouton"></p>      
             </div>
