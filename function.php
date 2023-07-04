@@ -88,6 +88,13 @@
         return $result[0];
     }
 
+    function getNombreCommandeParVetement($idVetement){
+        $connect=mysqlconnect();
+        $count=mysqli_query($connect,"select SUM(commande.quantite) from commande where idVetement =".$idVetement);
+        $result=mysqli_fetch_row($count);
+        return $result[0];
+    }
+
     function getTotalFacture($idFacture)
     {
         $connect=mysqlconnect();
