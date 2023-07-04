@@ -54,10 +54,10 @@
         <p class="soustitre3">Votre facture</p>
         <div class="facture">
             <img src="assets/img/LOGO.png" alt="" class="logo">
-            <h3>FACTURE</h3>
-                <p><?php echo $vue[0]['client_nom'] ?></p>
-                <p><?php echo $vue[0]['dateCommande'] ?></p>
-                <p><?php echo $vue[0]['timeCommande'] ?></p>
+            <h3 class="titre">FACTURE</h3>
+                <p>Client: <?php echo $vue[0]['client_nom'] ?></p>
+                <p>Heure: <?php echo $vue[0]['timeCommande'] ?></p>
+                <p>Date: <?php echo $vue[0]['dateCommande'] ?></p>
                     <table class="table">
                         <tr>
                             <th>Designation</th>
@@ -74,7 +74,7 @@
                         </tr>
                         <?php } ?>
                     </table>
-                <p>Total : <?php echo $total[0]['total'] ?> Ar</p>
+                <p class="total">Total : <?php echo $total[0]['total'] ?> Ar</p>
                 <p>THANK YOU</p>
         </div>    
         <div class="boutons">

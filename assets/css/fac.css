@@ -20,7 +20,7 @@
 
 .fac{
     margin-top: 200px;
-    margin-left: 458px;
+    margin-left: 320px;
     height: 1000px;
     font-family: 'Lato';
 }
@@ -28,22 +28,24 @@
 .facture {
     background-color: white;
     box-shadow: 0 2px 4px rgba(47, 70, 144, 0.739);
-    width: 700px;
-    height: 570px;
+    width: 524px;
+    height: 800px;
     padding-left: 40px;
     padding-top: 30px;
     border-radius: 4px;
-
+    padding-right: 40px;
+    margin-left: 78px;
 }
 
 .logo {
     /* display: inline-flex; */
     max-width: 115px;
-    /* margin-left: 20px; */
+    margin-left: 322px;
+    margin-top: 15px;
 }
 
 .boutons {
-    margin-left: 160px;
+    margin-left: 268px;
     margin-top: 40px;
     
 }
@@ -64,6 +66,21 @@
 .table {
     border-collapse: separate;
     border-spacing: 4px;
+    margin-bottom: 1rem;
+    background-color: transparent;
+    margin-top: 26px;
 }
 
+.total {
+    margin-left: 302px;
+    font-weight: 600;
+}
 
+.facture p {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.titre {
+    margin-top: -35px;
+}

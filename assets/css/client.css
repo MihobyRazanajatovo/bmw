@@ -20,7 +20,7 @@
     margin-top: 50px;
     justify-content: center;
     align-items: center;
-
+    margin-right: 8px;
 }
 
 .container {
@@ -81,7 +81,7 @@ input[type="time"] {
     width: 267px;
     height: 310px;
     margin-top: 150px;
-    margin-left: 416px;
+    margin-left: 419px;
     display: block;
     padding-top: 20px;
     padding-left: 23px;

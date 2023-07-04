@@ -59,7 +59,7 @@
     <!-- content -->
     </header>
     <div class="container">
-        <h2 class="titre">Bienvenue <?php echo $prenomAdmin; ?></h2>
+        <h2 class="titre" style="margin-right: 8px;">Bienvenue <?php echo $prenomAdmin; ?></h2>
         <form method="post" action="traitement_ajoutClient.php">
             <div class="client">
                 <p class="p">Insérez ici les coordonnées du client</p>
