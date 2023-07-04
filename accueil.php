@@ -82,10 +82,18 @@
                         <td class="datavl"><?php echo $v[$i]['PrixUnitaire'] ?></td>
                         <td><input class="quantite" type="number" name="quantite[]" id="quantite"></td>
                         <td class="sous_total"></td>
+                        <?php } ?>
+                        
+                    </tr>
+                    <tr class="total">
+                        <td></td>
+                        <td></td>
+                        <th>TOTAL: </th>
+                        <th><span id="total"></span></th>
                     </tr>               
-                    <?php } ?>
-                    <th colspan="2">TOTAL:  <span id="total"></span></th>  
-                </table>
+                    
+                     
+                </table> 
                 <p><input type="submit" value="Confirmer" name="add" class="confirmBouton"></p>      
             </div>
         </from>   
