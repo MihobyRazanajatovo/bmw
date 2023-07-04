@@ -99,7 +99,9 @@
 
     function getAllFacture()
     {
-        $sql = "select * from facture";
+        $sql = "SELECT f.idFacture, c.idClient, c.nom, c.email, c.telephone
+                FROM facture f 
+                JOIN client c ON f.idClient = c.idClient;";
         $resultat = mysqli_query(mysqlconnect(),$sql);
         while($out = mysqli_fetch_array($resultat))
         {

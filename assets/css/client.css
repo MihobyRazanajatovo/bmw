@@ -1,22 +1,27 @@
 @font-face {
-    font-family: 'Groovy Modice';
-    src: url('../fonts/GoovyModice.ttf.ttf') format('truetype');
+    font-family: 'Lato';
+    src: url('../fonts/Lato/Lato-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
-body {
-    background-color: #D9E7F0;
+@font-face {
+    font-family: 'Libre_Baskerville';
+    src: url('../fonts/Libre_Baskerville/LibreBaskerville-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 .titre {
     color: #32478F;
-    font-family: 'Goovy Modice', sans-serif;
-    font-size: 50px;
+    font-family: 'Libre_Baskerville', sans-serif;
+    font-size: 30px;
+    margin-top: 50px;
+
 }
 
 .container {
-    position: relative;
+    position: flex;
 }
 
 .date,

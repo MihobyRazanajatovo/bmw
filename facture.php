@@ -36,7 +36,7 @@
                                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Accueil</a>
                                 </li>
                                 <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-                                    <a class="nav-link" href="#">Liste des factures</a>
+                                    <a class="nav-link" href="list_facture.php">Liste des factures</a>
                                 </li>
                                 <?php if(isset($prenomAdmin)) { ?>
                                     <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">

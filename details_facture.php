@@ -1,8 +1,9 @@
 <?php
     include('function.php');
-    $lf = getAllFacture();
-    session_start();
-    $prenomAdmin = $_SESSION['prenomAdmin'];
+    $f = $_GET['id'];
+    $vue = getView($f);
+    $total =  getTotalFacture($f);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,10 +12,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/dt.css">
-    <title>Listes des factures</title>
+    <link rel="stylesheet" href="assets/css/facture.css">
+    <title>Facture</title>
 </head>
-<body>
+<body>              
     <div class="navigation-wrap bg-light start-header start-style">
         <div class="container">
             <div class="row">
@@ -33,7 +34,7 @@
                                     <a class="nav-link" href="profil.php">Home</a>
                                 </li>
                                 <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 active">
-                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Liste des factures</a>
+                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="list_facture.php" role="button" aria-haspopup="true" aria-expanded="false">Liste des facture</a>
                                 </li>
                                 
                                 <?php if(isset($prenomAdmin)) { ?>
@@ -48,18 +49,34 @@
             </div>
         </div>
     </div>
-    <div class="container">
-        <?php for ($i = 0; $i < count($lf); $i++) { ?>
-        <div class="list">
-            <p class="soustitre4">FACTURE DE</p>
-            
-                <p><?php echo $lf[$i]['nom'] ?></p>
-                <p><?php echo $lf[$i]['email'] ?></p>
-                <p><?php echo $lf[$i]['telephone'] ?></p>
-                <button type="submit"><a href="details_facture.php?id=<?php echo $lf[$i]['idFacture']; ?>">Voir les details </a></button>
-            
-        </div>
-        <?php } ?> 
+    <p class="soustitre3">Votre facture</p>
+    <div class="facture" style="height: 560px;">
+        <img src="assets/img/LOGO.png" alt="" style="width: 78px;">
+        <h3>FACTURE</h3>
+        <p>Client: <?php echo $vue[0]['client_nom'] ?></p>
+        <p>Date: <?php echo $vue[0]['dateCommande'] ?></p>
+        <p>Heure: <?php echo $vue[0]['timeCommande'] ?></p>
+        <table>
+            <tr>
+                <th>Designation</th>
+                <th>P.U</th>
+                <th>Quantite</th>
+                <th>Sous Total</th>
+            </tr>
+            <?php for ($i = 0; $i < count($vue); $i++) { ?>
+            <tr>
+                <td><?php echo $vue[$i]['nomVetement'] ?></td>
+                <td><?php echo $vue[$i]['PrixUnitaire'] ?></td>
+                <td><?php echo $vue[$i]['quantite'] ?></td>
+                <td><?php echo $vue[$i]['sous_total'] ?></td>
+            </tr>
+            <?php } ?>
+        </table>
+        <p>Total : <?php echo $total[0]['total'] ?> </p>
+        <p>THANK YOU</p>
+        <form action="export_pdf.php" method="post">
+            <input type="submit" value="VALIDER" style="margin-top: 10px;background-color: #252850;color: white;border: none;padding: 7px 20px;border-radius: 7px;margin-left: 387px;" >
+        </form>
     </div>
 </body>
 </html>
