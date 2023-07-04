@@ -75,7 +75,7 @@
                         <?php } ?>
                     </table>
                 <p class="total">Total : <?php echo $total[0]['total'] ?> Ar</p>
-                <p>THANK YOU</p>
+                <p style="margin-left: 170px;margin-top: 40px;">THANK YOU!</p>
         </div>    
         <div class="boutons">
             <form action="export_pdf.php" method="post">
