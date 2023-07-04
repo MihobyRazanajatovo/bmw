@@ -68,5 +68,34 @@ body {
     border-top: 1px solid #ccc;
   }
 
+facture
 
-  <?php echo utf8_encode($v[$i]['nomVetement']); ?>
+.soustitre {
+    display: flex;
+    font-family: 'Libre_Baskerville';
+    color: #2F4590;
+}
+
+.facture {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 2px 4px rgba(47, 70, 144, 0.739);
+    width: 553px;
+    height: 560px;
+    margin-top: 12px;
+    padding-left: 40px;
+    padding-top: 30px;
+    font-family: 'Lato', sans-serif;
+    border-radius: 7px;
+    margin-left: 137px;
+    font-size: 13px;
+}
+
+.boutonValider {
+    margin-top: 10px;
+    background-color: #252850;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
