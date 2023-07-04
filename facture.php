@@ -50,36 +50,39 @@
             </div>
         </div>
     </div>
-    
-    <p class="soustitre3">Votre facture</p>
-    <div class="facture">
-        <img src="assets/img/LOGO.png" alt="">
-        <h3>FACTURE</h3>
-        <p><?php echo $vue[0]['client_nom'] ?></p>
-        <p><?php echo $vue[0]['dateCommande'] ?></p>
-        <p><?php echo $vue[0]['timeCommande'] ?></p>
-        <table>
-            <tr>
-                <th>Designation</th>
-                <th>P.U</th>
-                <th>Quantite</th>
-                <th>Sous Total</th>
-            </tr>
-            <?php for ($i = 0; $i < count($vue); $i++) { ?>
-            <tr>
-                <td><?php echo $vue[$i]['nomVetement'] ?></td>
-                <td><?php echo $vue[$i]['PrixUnitaire'] ?></td>
-                <td><?php echo $vue[$i]['quantite'] ?></td>
-                <td><?php echo $vue[$i]['sous_total'] ?></td>
-            </tr>
-            <?php } ?>
-        </table>
-        <p>Total : <?php echo $total[0]['total'] ?> </p>
-        <p>THANK YOU</p>
-        <form action="export_pdf.php" method="post">
-            <input type="submit" value="VALIDER">
-        </form>
-        <input type="submit" value="MODIFIER">
+    <div class="fac">
+        <p class="soustitre3">Votre facture</p>
+        <div class="facture">
+            <img src="assets/img/LOGO.png" alt="" class="logo">
+            <h3>FACTURE</h3>
+                <p><?php echo $vue[0]['client_nom'] ?></p>
+                <p><?php echo $vue[0]['dateCommande'] ?></p>
+                <p><?php echo $vue[0]['timeCommande'] ?></p>
+                    <table class="table">
+                        <tr>
+                            <th>Designation</th>
+                            <th>P.U</th>
+                            <th>Quantite</th>
+                            <th>Sous Total</th>
+                        </tr>
+                        <?php for ($i = 0; $i < count($vue); $i++) { ?>
+                        <tr>
+                            <td><?php echo $vue[$i]['nomVetement'] ?></td>
+                            <td><?php echo $vue[$i]['PrixUnitaire'] ?> Ar</td>
+                            <td><?php echo $vue[$i]['quantite'] ?></td>
+                            <td><?php echo $vue[$i]['sous_total'] ?> Ar</td>
+                        </tr>
+                        <?php } ?>
+                    </table>
+                <p>Total : <?php echo $total[0]['total'] ?> Ar</p>
+                <p>THANK YOU</p>
+        </div>    
+        <div class="boutons">
+            <form action="export_pdf.php" method="post">
+                <input type="submit" value="Valider">
+            </form>
+            <input type="submit" value="Modifier" style="background-color: #D9E7F0;color: #32478F;"> 
+        </div>
     </div>
 </body>
 </html>

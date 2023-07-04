@@ -13,8 +13,57 @@
 }
 
 .soustitre3 {
+    display: flex;
     font-family: 'Libre_Baskerville';
-    margin-top: 146px;
-    margin-left: 137px;
     color: #32478F;
 }
+
+.fac{
+    margin-top: 200px;
+    margin-left: 458px;
+    height: 1000px;
+    font-family: 'Lato';
+}
+
+.facture {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(47, 70, 144, 0.739);
+    width: 700px;
+    height: 570px;
+    padding-left: 40px;
+    padding-top: 30px;
+    border-radius: 4px;
+
+}
+
+.logo {
+    /* display: inline-flex; */
+    max-width: 115px;
+    /* margin-left: 20px; */
+}
+
+.boutons {
+    margin-left: 160px;
+    margin-top: 40px;
+    
+}
+
+.boutons input[type="submit"] {
+    background-color: #32478F;
+    color: white;
+    font-weight: 400;
+    font-size: 15px;
+    width: 150px;
+    height: 33px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    margin-top: 3px;
+}
+
+.table {
+    border-collapse: separate;
+    border-spacing: 4px;
+}
+
+
