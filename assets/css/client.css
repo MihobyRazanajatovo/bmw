@@ -13,15 +13,20 @@
 }
 
 .titre {
+    display: flex;
     color: #32478F;
     font-family: 'Libre_Baskerville', sans-serif;
     font-size: 30px;
     margin-top: 50px;
+    justify-content: center;
+    align-items: center;
 
 }
 
 .container {
     position: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .date,
@@ -30,7 +35,7 @@
     top: 107px;
     padding-left: 20px;
     padding-top: 10px;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Lato', sans-serif;
     color: rgb(14, 14, 14);
     border-radius: 7px;
     box-shadow: 0 2px 5px rgba(71, 71, 71, 0.3);
@@ -50,7 +55,7 @@ input[type="date"] {
     border: 1px;
     background-color: #D9E7F0;
     height: 30px;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Lato', sans-serif;
     font-size: 14px;
     border-radius: 4px;
     color: #32478F;
@@ -62,7 +67,7 @@ input[type="time"] {
     border: 1px;
     background-color: #D9E7F0;
     height: 30px;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Lato', sans-serif;
     font-size: 14px;
     border-radius: 4px;
     color: #32478F;
@@ -73,10 +78,13 @@ input[type="time"] {
 
 .client {
     background-color: rgb(255, 255, 255);
-    width: 300px;
-    height: 213px;
-    margin-top: 21px;
-
+    width: 267px;
+    height: 310px;
+    margin-top: 150px;
+    margin-left: 416px;
+    display: block;
+    padding-top: 20px;
+    padding-left: 23px;
 }
 
 .client input[type="text"],
@@ -85,12 +93,13 @@ input[type="time"] {
     border: 1px solid #ffffff;
     background-color: #D9E7F0;
     height: 30px;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Lato', sans-serif;
     font-size: 14px;
     border-radius: 4px;
     color: #32478F;
-    width: 259px;
-    margin-bottom: 5px;
+    width: 215px;
+    height: 40px;
+    margin-bottom: 3px;
     padding: 10px;
 }
 
@@ -111,23 +120,20 @@ input[type="time"] {
     margin-top: 12px;
     padding-left: 40px;
     padding-top: 30px;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Lato', sans-serif;
     border-radius: 7px;
     margin-left: 137px;
     font-size: 13px;
 }
 
-.soustitre {
-    position: absolute;
-    left: 14px;
-    font-family: 'Segoe UI', sans-serif;
-    font-weight: 600;
-    font-size: 21px;
+.p {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
 }
 
 .soustitre2 {
 
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Lato', sans-serif;
     font-weight: 600;
     font-size: 21px;
     margin-top: 146px;
@@ -135,7 +141,7 @@ input[type="time"] {
 }
 .soustitre3 {
 
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Lato', sans-serif;
     font-weight: 600;
     font-size: 21px;
     margin-top: 146px;
@@ -152,7 +158,7 @@ input[type="time"] {
     border: 1px solid #ffffff;
     background-color: #D9E7F0;
     height: 30px;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Lato', sans-serif;
     width: 48px;
     padding-left: 5px;
     color: #32478F;
@@ -169,11 +175,11 @@ input[type="time"] {
     color: white;
     font-weight: 400;
     font-size: 15px;
-    width: 79px;
+    width: 210px;
     height: 33px;
-    margin-top: 7px;
-    margin-left: 178px;
-    border-radius: 9px;
+    margin-top: 14px;
+    margin-left: 3px;
+    border-radius: 6px;
     border: none; 
     cursor: pointer;
 }

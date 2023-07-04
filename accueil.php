@@ -3,7 +3,15 @@
     $v=getVetement();
     session_start();
     $prenomAdmin = $_SESSION['prenomAdmin'];
+    $mysqli = mysqli_connect('localhost', 'root', 'root', 'wb');
 
+    // Vérifier les erreurs de connexion
+    if (!$mysqli) {
+    // Gérer les erreurs de connexion
+    }
+
+    // Définir l'encodage de la connexion
+    mysqli_set_charset($mysqli, "utf8");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,8 +20,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/test.css">
-    <title>clients</title>
+    <link rel="stylesheet" href="assets/css/commande.css">
+    <title>Commande</title>
 </head>
 <body>
     <div class="navigation-wrap bg-light start-header start-style">
@@ -30,11 +38,11 @@
                         
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav ml-auto py-4 py-md-0">
-                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 active">
-                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Accueil</a>
+                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                    <a class="nav-link" href="list_facture.php">Accueil</a>
                                 </li>
                                 <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-                                    <a class="nav-link" href="#">Liste des factures</a>
+                                    <a class="nav-link" href="list_facture.php">Liste des factures</a>
                                 </li>
                                 <?php if(isset($prenomAdmin)) { ?>
                                     <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
@@ -48,40 +56,39 @@
             </div>
         </div>
     </div>
-    <p class="soustitre2">Entrez ici les commandes</p>
-    <form action="traitement_ajout.php" method="post">
-        <div class="date">
-          <p>Date</p>
-          <input type="date" name="dateCommande" id="dateCommande">
-          <input type="time" name="timeCommande" id="timeCommande">
-        </div>
-        <div class="box">      
-          <table class="table">
-              <tr>
-                  <th>Type de vetement</th>
-                  <th>Prix unitaire</th>
-                  <th>Quantity</th>
-                  <th>Sous-total</th>
-                  <th>Annuler</th>
-              </tr>
-              <?php for ($i = 0; $i < count($v); $i++) { ?>          
-              <tr class="table2">
-                  <td><?php echo $v[$i]['nomVetement'] ?></td>
-                  <input type="hidden" name="idVetement[]" value="<?php echo $v[$i]['idVetement'] ?>">
-                  <td class="datavl"><?php echo $v[$i]['PrixUnitaire'] ?></td>
-                  <td><input class="quantite" type="number" name="quantite[]" id="quantite"></td>
-                  <td class="sous_total"></td>
-                  <td></td>
-              </tr>
-              
-              <?php } ?>
-          <td>TOTAL:  <span id="total"></span></td>  
-          </table>
-          <p><input type="submit" value="Confirmer" name="add" class="confirmBouton"></p>      
-        </div>
-    </from>
-
-        
+    <div class="back">
+        <p class="soustitre">Insérez ici la date d'aujourd'hui</p>
+        <form action="traitement_ajout.php" method="post">
+            <div class="date">
+                <p class="titreDate">Date</p>
+                <p class="nextDate">
+                    <input type="date" name="dateCommande" id="dateCommande" >
+                    <input type="time" name="timeCommande" id="timeCommande" style="margin-left: 12px;">
+                </p>              
+            </div>
+            <div class="box"> 
+                <p class="soustitre2">Faîtes la commande ici</p>     
+                <table class="table">
+                    <tr>
+                        <th>Type de vetement</th>
+                        <th>Prix unitaire</th>
+                        <th>Quantity</th>
+                        <th>Sous-total</th>
+                    </tr>
+                    <?php for ($i = 0; $i < count($v); $i++) { ?>          
+                    <tr class="table2">
+                        <td><?php echo $v[$i]['nomVetement'] ?></td>
+                        <input type="hidden" name="idVetement[]" value="<?php echo $v[$i]['idVetement'] ?>">
+                        <td class="datavl"><?php echo $v[$i]['PrixUnitaire'] ?></td>
+                        <td><input class="quantite" type="number" name="quantite[]" id="quantite"></td>
+                        <td class="sous_total"></td>
+                    </tr>               
+                    <?php } ?>
+                    <td>TOTAL:  <span id="total"></span></td>  
+                </table>
+                <p><input type="submit" value="Confirmer" name="add" class="confirmBouton"></p>      
+            </div>
+        </from>   
     </div>
   <script>
   var inputs = document.querySelectorAll(".quantite");

@@ -39,10 +39,10 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav ml-auto py-4 py-md-0">
                                 <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 active">
-                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Home</a>
+                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Accueil</a>
                                 </li>
                                 <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-                                    <a class="nav-link" href="#">Liste des factures</a>
+                                    <a class="nav-link" href="list_facture.php">Liste des factures</a>
                                 </li>
                                 <?php if(isset($prenomAdmin)) { ?>
                                     <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
@@ -60,18 +60,15 @@
     </header>
     <div class="container">
         <h2 class="titre">Bienvenue <?php echo $prenomAdmin; ?></h2>
-        <p class="soustitre">Entrez ici les coordonnées du client</p>
         <form method="post" action="traitement_ajoutClient.php">
-        <div class="client">
-            <p>Coordonnees des clients</p>
-            <input type="text" name="nom" id="nom" placeholder="Name">
-            <input type="email" name="email" id="email" placeholder="Email">
-            <input type="number" name="telephone" id="telephone" placeholder="Phone">
-            <input type="submit" value="Ajouter" name="add" class="boutonAdd">
+            <div class="client">
+                <p class="p">Insérez ici les coordonnées du client</p>
+                <input type="text" name="nom" id="nom" placeholder="Name">
+                <input type="email" name="email" id="email" placeholder="Email">
+                <input type="number" name="telephone" id="telephone" placeholder="Phone">
+                <input type="submit" value="Ajouter" name="add" class="boutonAdd">
+            </div>
+        </form>
     </div>
-</form>
-        
-                
-
 </body>
 </html>

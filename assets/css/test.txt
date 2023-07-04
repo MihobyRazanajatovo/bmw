@@ -67,3 +67,6 @@ body {
     height: 10px;
     border-top: 1px solid #ccc;
   }
+
+
+  <?php echo utf8_encode($v[$i]['nomVetement']); ?>

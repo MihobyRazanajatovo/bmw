@@ -2,8 +2,12 @@
     function mysqlconnect()
     {
         $bdd = mysqli_connect('localhost','root','root','wb');
+        mysqli_set_charset($bdd, "utf8");
+
         return $bdd;
     }
+
+
 //miasa
     function login($email, $mot_de_passe)
     {
