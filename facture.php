@@ -81,7 +81,7 @@
             <form action="export_pdf.php" method="post">
                 <input type="submit" value="Valider">
             </form>
-            <input type="submit" value="Modifier" style="background-color: #D9E7F0;color: #32478F;"> 
+            <button type="submit" style="background-color: #D9E7F0;color: #32478F;" class="but" ><a href="accueil.php">Annuler</a></button>
         </div>
     </div>
 </body>
