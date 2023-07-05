@@ -41,7 +41,7 @@
                                     <a class="nav-link" href="list_facture.php">Liste des factures</a>
                                 </li>
                                 <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-                                    <a class="nav-link" href="list_facture.php">Statistiques</a>
+                                    <a class="nav-link" href="dashboard.php">Statistiques</a>
                                 </li>
                                 <?php if(isset($prenomAdmin)) { ?>
                                     <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
