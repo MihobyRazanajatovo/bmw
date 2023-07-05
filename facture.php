@@ -6,6 +6,16 @@
 
     session_start();
     $prenomAdmin = $_SESSION['prenomAdmin'];
+
+    if (isset($_GET['Annuler'])) {
+    $idCommande = isset($_GET['id']) ? intval($_GET['id']) : 0; 
+    delete($idCommande);
+
+    $tab = array();
+    foreach ($vue as $order) {
+        $tab[] = $order['idCommande'];
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,6 +47,9 @@
                                 </li>
                                 <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
                                     <a class="nav-link" href="list_facture.php">Liste des factures</a>
+                                </li>
+                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                    <a class="nav-link" href="dashboard.php">Statistiques</a>
                                 </li>
                                 <?php if(isset($prenomAdmin)) { ?>
                                     <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
@@ -81,8 +94,16 @@
             <form action="export_pdf.php" method="post">
                 <input type="submit" value="Valider">
             </form>
-            <button type="submit" style="background-color: #D9E7F0;color: #32478F;" class="but" ><a href="accueil.php">Annuler</a></button>
+            <div class="delete" style="margin-left: 2px;margin-top: 10px;background-color: #EAF2F7;width: 147px;padding-left: 44px;height: 32px;padding-top: 2px;border-radius: 4px;border: none;color: #32478F;">
+            <?php foreach ($vue as $order) { ?>
+                <input type="hidden" ><a href="traitement_delete.php?id=<?php echo $order['idCommande']; ?>" >
+                <?php } ?>
+                Annuler</a></input>
+            </div>
+            
         </div>
+        <div class="boutons">
+
     </div>
 </body>
 </html>

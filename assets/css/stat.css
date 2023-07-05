@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/Lato/Lato-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Libre_Baskerville';
+    src: url('../fonts/Libre_Baskerville/LibreBaskerville-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    height: 900px;
+}
+.stat {
+    margin-top: 200px;
+    width: 800px;
+    height: auto;
+    margin-left: 253px;
+}

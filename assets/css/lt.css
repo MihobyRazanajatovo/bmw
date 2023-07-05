@@ -1,0 +1,66 @@
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/Lato/Lato-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Libre_Baskerville';
+    src: url('../fonts/Libre_Baskerville/LibreBaskerville-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.container2 {
+    font-family: 'Lato';
+    margin-top: 30px;
+    margin-left: 150px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.list {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(47, 70, 144, 0.739);
+    grid-gap: 20px;
+    margin-bottom: 70px;
+    width: 237px;
+    height: 250px;
+    padding-left: 43px;
+    padding-top: 20px;
+}
+
+
+
+.titre {
+    margin-top: 180px;
+    text-align: center;
+    font-family: 'Libre_Baskerville';
+    color: #32478F;
+    font-size: 24px;
+}
+
+.list button {
+    background-color: #32478F;
+    color: white;
+    width: 100px;
+    height: auto;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    margin-left: 19px;
+}
+
+.list button a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.soustitre4 {
+    font-weight: 600;
+    margin-left: 31px;
+}

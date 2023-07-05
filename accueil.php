@@ -4,13 +4,9 @@
     session_start();
     $prenomAdmin = $_SESSION['prenomAdmin'];
     $mysqli = mysqli_connect('localhost', 'root', 'root', 'wb');
-
-    // Vérifier les erreurs de connexion
     if (!$mysqli) {
-    // Gérer les erreurs de connexion
-    }
 
-    // Définir l'encodage de la connexion
+    }
     mysqli_set_charset($mysqli, "utf8");
 ?>
 <!DOCTYPE html>
@@ -43,6 +39,9 @@
                                 </li>
                                 <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
                                     <a class="nav-link" href="list_facture.php">Liste des factures</a>
+                                </li>
+                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                    <a class="nav-link" href="list_facture.php">Statistiques</a>
                                 </li>
                                 <?php if(isset($prenomAdmin)) { ?>
                                     <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
@@ -79,7 +78,7 @@
                     <tr class="table2">
                         <td><?php echo $v[$i]['nomVetement'] ?></td>
                         <input type="hidden" name="idVetement[]" value="<?php echo $v[$i]['idVetement'] ?>">
-                        <td class="datavl"><?php echo $v[$i]['PrixUnitaire'] ?></td>
+                        <td class="datavl"><?php echo $v[$i]['PrixUnitaire'] ?> Ar</td>
                         <td><input class="quantite" type="number" name="quantite[]" id="quantite"></td>
                         <td class="sous_total"></td>
                         <?php } ?>
@@ -89,7 +88,7 @@
                         <td></td>
                         <td></td>
                         <th>TOTAL: </th>
-                        <th><span id="total"></span></th>
+                        <th><span id="total"></span> Ar</th>
                     </tr>               
                     
                      

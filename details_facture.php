@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/fac.css">
+    <link rel="stylesheet" href="assets/css/dt.css">
     <title>Facture</title>
 </head>
 <body>              
@@ -31,12 +31,14 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav ml-auto py-4 py-md-0">
                                 <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-                                    <a class="nav-link" href="profil.php">Home</a>
+                                    <a class="nav-link" href="profil.php">Accueil</a>
                                 </li>
-                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 active">
-                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="list_facture.php" role="button" aria-haspopup="true" aria-expanded="false">Liste des facture</a>
+                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                    <a class="nav-link" href="profil.php">Liste des factures</a>
                                 </li>
-                                
+                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                    <a class="nav-link" href="profil.php">Statistiques</a>
+                                </li>
                                 <?php if(isset($prenomAdmin)) { ?>
                                     <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
                                         <a href="Deconnexion.php"><img src="assets/img/logout.png" alt="" style="height: 32px;margin-top: -8px;"></a>
@@ -49,14 +51,15 @@
             </div>
         </div>
     </div>
+    <div class="fac">
     <p class="soustitre3">Votre facture</p>
-    <div class="facture" style="height: 560px;">
-        <img src="assets/img/LOGO.png" alt="" style="width: 78px;">
-        <h3>FACTURE</h3>
+    <div class="facture">
+        <img src="assets/img/LOGO.png" alt="" class="logo">
+        <h3 class="titre">FACTURE</h3>
         <p>Client: <?php echo $vue[0]['client_nom'] ?></p>
         <p>Date: <?php echo $vue[0]['dateCommande'] ?></p>
         <p>Heure: <?php echo $vue[0]['timeCommande'] ?></p>
-        <table>
+        <table class="table">
             <tr>
                 <th>Designation</th>
                 <th>P.U</th>
@@ -72,10 +75,15 @@
             </tr>
             <?php } ?>
         </table>
-        <p>Total : <?php echo $total[0]['total'] ?> </p>
-        <p>THANK YOU</p>
+        <p class="total">Total : <?php echo $total[0]['total'] ?> </p>
+        <p style="margin-left: 170px;margin-top: 40px;">THANK YOU</p>
+        </div>
+        <div class="boutons">
         <form action="export_pdf.php" method="post">
-            <input type="submit" value="VALIDER" style="margin-top: 10px;background-color: #252850;color: white;border: none;padding: 7px 20px;border-radius: 7px;margin-left: 387px;" >
+            <input type="submit" value="Valider" >
+        </form>
+        <form action="list_facture.php" method="GET">
+            <input type="submit" value="Annuler" style="background-color: #D9E7F0;color: #32478F;">
         </form>
     </div>
 </body>

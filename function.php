@@ -121,16 +121,19 @@
         return $result;
     }
 
-
-
-//en cours
-    function updateCommande($idCommande,$idClient,$idVetement,$quantite,$dateCommande,$timeCommande,$montant)
+    function delete($id)
     {
         $connect=mysqlconnect();
-        $sql="update commande set idCient='".$idClient."',idVetement='".$idVetement."',quantite='".$quantite."',dateCommande='".$dateCommande."',timeCommande='".$timeCommande."',montant='".$montant."' where idCommade=".$idCommande." ";
-        $valiny=mysqli_query($connect,$sql);
+        $id = mysqli_real_escape_string($connect, $id);
+        $sql="delete from commande where idCommande=".$id;
+        if (mysqli_query($connect, $sql)) {
+        echo "Order deleted successfully.";
+        } else {
+            echo "Error deleting order: " . mysqli_error($connect);
+        }
+        mysqli_close($connect);
     }
-//men cours
+
     function getClient()
     {
         $sql = "select * from client";
@@ -181,5 +184,7 @@
         }
         return $result;
     }
+
+
     
 ?>

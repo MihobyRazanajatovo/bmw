@@ -1,59 +1,106 @@
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/Lato/Lato-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
+@font-face {
+    font-family: 'Libre_Baskerville';
+    src: url('../fonts/Libre_Baskerville/LibreBaskerville-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
-.container {
+.soustitre3 {
     display: flex;
-    justify-content: center;
+    font-family: 'Libre_Baskerville';
+    color: #32478F;
+    margin-left: 268px;
+    font-size: 24px;
 }
 
-/* .list {
-    background-color: white;
-    width: 300px;
-    height: 281px;
-    border-radius: 10px;
-    padding-left: 20px;
-    position: relative;
-} */
-
-.list {
-    background-color: white;
-    margin: 10px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    text-align: center;
-    margin-top: 146px;
+.fac {
+    margin-top: 200px;
+    margin-left: 320px;
+    height: 1000px;
+    font-family: 'Lato';
 }
-/* 
-.soustitre4 {
 
-    
+.facture {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(47, 70, 144, 0.739);
+    width: 524px;
+    height: 800px;
+    padding-left: 40px;
+    padding-top: 30px;
+    border-radius: 4px;
+    padding-right: 40px;
+    margin-left: 78px;
+}
+
+.logo {
+    /* display: inline-flex; */
+    max-width: 115px;
+    margin-left: 322px;
+    margin-top: 15px;
+}
+
+.boutons {
+    margin-left: 268px;
+    margin-top: 40px;
+
+}
+
+.boutons input[type="submit"] {
+    background-color: #32478F;
+    color: white;
+    font-weight: 400;
+    font-size: 15px;
+    width: 150px;
+    height: 33px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    margin-top: 3px;
+}
+
+.table {
+    border-collapse: separate;
+    border-spacing: 4px;
+    margin-bottom: 1rem;
+    background-color: transparent;
+    margin-top: 26px;
+}
+
+.total {
+    margin-left: 302px;
     font-weight: 600;
-    font-size: 21px;
-    margin-top: 146px;
-} */
-
-.soustitre4 {
-    font-family: 'Segoe UI', sans-serif;
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
 }
 
-.list p {
-    margin: 5px 0;
+.facture p {
+    margin-top: 0;
+    margin-bottom: 5px;
 }
 
-.list button a {
+.titre {
+    margin-top: -35px;
+}
+
+.but {
+    color: #32478F;
+    font-weight: 400;
+    font-size: 15px;
+    width: 150px;
+    height: 33px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    margin-top: 3px;
+}
+
+.but button a {
     color: #fff;
     /* Set link color to white */
-    text-decoration: none;
-}
-.list button {
-    margin-top: 10px;
-    background-color:#252850;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
     text-decoration: none;
 }

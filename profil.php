@@ -44,6 +44,9 @@
                                 <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
                                     <a class="nav-link" href="list_facture.php">Liste des factures</a>
                                 </li>
+                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                    <a class="nav-link" href="dashboard.php">Statistiques</a>
+                                </li>
                                 <?php if(isset($prenomAdmin)) { ?>
                                     <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
                                         <a href="Deconnexion.php"><img src="assets/img/logout.png" alt="" style="height: 32px;margin-top: -8px;"></a>
@@ -56,6 +59,7 @@
             </div>
         </div>
     </div>
+    </header>
     <!-- content -->
     </header>
     <div class="container">

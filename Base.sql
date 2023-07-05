@@ -24,7 +24,7 @@ CREATE TABLE client (
     email VARCHAR(50) NOT NULL,
     telephone VARCHAR(15) NOT NULL
 );
--- taloha
+
 CREATE TABLE commande (
     idCommande int not null AUTO_INCREMENT,
     idClient int,
